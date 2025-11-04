@@ -60,7 +60,7 @@ Results after 3 months:
 export const sampleVideoContent: Omit<ContentSource, 'id' | 'user_id' | 'created_at' | 'updated_at'> = {
   title: 'How to 10x Your Content Reach',
   content_type: 'video',
-  source_content: 'Transcript: Hey everyone! Today I want to share the exact system I use to take one piece of content and turn it into 50 platform-specific posts. This isn't about copy-pasting—it's about strategic adaptation. Let me show you how...',
+  source_content: 'Transcript: Hey everyone! Today I want to share the exact system I use to take one piece of content and turn it into 50 platform-specific posts. This isn\'t about copy-pasting—it\'s about strategic adaptation. Let me show you how...',
   source_url: 'https://youtube.com/watch?v=example',
   metadata: {
     duration: '8:45',
@@ -72,7 +72,7 @@ export const sampleVideoContent: Omit<ContentSource, 'id' | 'user_id' | 'created
 export const sampleAudioContent: Omit<ContentSource, 'id' | 'user_id' | 'created_at' | 'updated_at'> = {
   title: 'The Creator Economy Podcast Ep. 42',
   content_type: 'audio',
-  source_content: 'Transcript: Welcome back to The Creator Economy. Today we're talking about something every creator struggles with: distribution. You make amazing content, but getting it in front of people? That's the real challenge...',
+  source_content: 'Transcript: Welcome back to The Creator Economy. Today we\'re talking about something every creator struggles with: distribution. You make amazing content, but getting it in front of people? That\'s the real challenge...',
   metadata: {
     duration: '32:15',
     episode: 42,

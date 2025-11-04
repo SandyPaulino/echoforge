@@ -9,7 +9,7 @@ export const sampleBrandVoices: Omit<BrandVoiceProfile, 'id' | 'user_id' | 'crea
     example_texts: [
       'Our enterprise solution delivers 99.9% uptime with zero-downtime deployments.',
       'Streamline your workflow with AI-powered automation that integrates seamlessly with existing tools.',
-      'Security isn't an afterthought—it's built into every layer of our infrastructure.'
+      'Security isn\'t an afterthought—it\'s built into every layer of our infrastructure.'
     ],
     is_default: true
   },
@@ -31,8 +31,8 @@ export const sampleBrandVoices: Omit<BrandVoiceProfile, 'id' | 'user_id' | 'crea
     style_guide: 'Confident, insightful, and forward-thinking. Share unique perspectives backed by experience. Challenge conventional wisdom.',
     target_audience: 'Industry professionals and aspiring leaders',
     example_texts: [
-      'The future of work isn't remote vs. office—it's about outcomes over presence.',
-      'Most companies are solving the wrong problem. Here's what they're missing...',
+      'The future of work isn\'t remote vs. office—it\'s about outcomes over presence.',
+      'Most companies are solving the wrong problem. Here\'s what they\'re missing...',
       'Data shows a clear pattern: Companies that embrace AI now will dominate in 5 years.'
     ],
     is_default: false
@@ -43,9 +43,9 @@ export const sampleBrandVoices: Omit<BrandVoiceProfile, 'id' | 'user_id' | 'crea
     style_guide: 'Motivating, action-oriented, and optimistic. Focus on possibility and momentum. Use power words and active voice.',
     target_audience: 'Startup founders and growth teams',
     example_texts: [
-      'Every day is an opportunity to move the needle. What's your one focus today?',
-      'We just hit $100K MRR. Here's the complete playbook we used to get there 🚀',
-      'Growth isn't about doing more—it's about doing what matters, consistently.'
+      'Every day is an opportunity to move the needle. What\'s your one focus today?',
+      'We just hit $100K MRR. Here\'s the complete playbook we used to get there 🚀',
+      'Growth isn\'t about doing more—it\'s about doing what matters, consistently.'
     ],
     is_default: false
   },
@@ -57,7 +57,7 @@ export const sampleBrandVoices: Omit<BrandVoiceProfile, 'id' | 'user_id' | 'crea
     example_texts: [
       'Implemented a Redis caching layer that reduced API response time from 800ms to 45ms.',
       'Our algorithm uses transformer-based architecture with attention mechanisms for context-aware generation.',
-      'Here's the TypeScript implementation of a custom React hook for debounced search:'
+      'Here\'s the TypeScript implementation of a custom React hook for debounced search:'
     ],
     is_default: false
   }
