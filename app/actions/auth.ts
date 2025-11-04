@@ -6,35 +6,47 @@ import { createClient } from '@/utils/supabase/server'
 import type { LoginCredentials, SignupCredentials } from '@/types/auth'
 
 export async function login(credentials: LoginCredentials) {
-  const supabase = await createClient()
+  try {
+    const supabase = await createClient()
 
-  const { error } = await supabase.auth.signInWithPassword({
-    email: credentials.email,
-    password: credentials.password,
-  })
+    const { error } = await supabase.auth.signInWithPassword({
+      email: credentials.email,
+      password: credentials.password,
+    })
 
-  if (error) {
-    return { error: error.message }
+    if (error) {
+      console.error('Login error:', error)
+      return { error: error.message }
+    }
+
+    revalidatePath('/', 'layout')
+    redirect('/dashboard-routes/dashboard')
+  } catch (error) {
+    console.error('Login action error:', error)
+    return { error: 'An unexpected error occurred during login' }
   }
-
-  revalidatePath('/', 'layout')
-  redirect('/dashboard-routes/dashboard')
 }
 
 export async function signup(credentials: SignupCredentials) {
-  const supabase = await createClient()
+  try {
+    const supabase = await createClient()
 
-  const { error } = await supabase.auth.signUp({
-    email: credentials.email,
-    password: credentials.password,
-  })
+    const { error } = await supabase.auth.signUp({
+      email: credentials.email,
+      password: credentials.password,
+    })
 
-  if (error) {
-    return { error: error.message }
+    if (error) {
+      console.error('Signup error:', error)
+      return { error: error.message }
+    }
+
+    revalidatePath('/', 'layout')
+    redirect('/dashboard-routes/dashboard')
+  } catch (error) {
+    console.error('Signup action error:', error)
+    return { error: 'An unexpected error occurred during signup' }
   }
-
-  revalidatePath('/', 'layout')
-  redirect('/dashboard-routes/dashboard')
 }
 
 export async function logout() {
