@@ -25,7 +25,7 @@ export default function LoginPage() {
       if (result?.error) {
         setError(result.error)
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred')
     } finally {
       setIsLoading(false)
@@ -84,7 +84,7 @@ export default function LoginPage() {
             )}
           </Button>
           <p className="text-sm text-center text-muted-foreground">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link href="/auth-routes/signup" className="text-primary hover:underline font-medium">
               Sign up
             </Link>
