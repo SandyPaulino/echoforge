@@ -42,9 +42,18 @@ export async function middleware(request: NextRequest) {
       error,
     } = await supabase.auth.getUser()
 
-    // If there's an error getting the user, allow the request to continue
+    // If there's an error getting the user (like invalid token), clear cookies
     if (error) {
-      console.error('Middleware auth error:', error)
+      // Only log if it's not a "user not found" error (which is expected for logged out users with stale cookies)
+      if (error.code !== 'user_not_found') {
+        console.error('Middleware auth error:', error)
+      }
+      // Clear invalid auth cookies by creating a fresh response
+      response = NextResponse.next({
+        request: {
+          headers: request.headers,
+        },
+      })
     }
 
     // Protect dashboard routes
